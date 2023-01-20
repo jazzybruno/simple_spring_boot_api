@@ -1,4 +1,4 @@
-package com.example.student;
+package com.example.springapp.student;
 
 import java.time.LocalDate;
 
