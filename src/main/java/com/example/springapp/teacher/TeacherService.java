@@ -1,61 +1,21 @@
 package com.example.springapp.teacher;
 
+import com.example.springapp.student.StudentRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Component
 public class TeacherService {
+    TeacherRepository teacherRepository;
+
+    @Autowired
+    public TeacherService(TeacherRepository teacherRepository) {
+        this.teacherRepository = teacherRepository;
+    }
+
     public List<Teacher> getTeachers(){
-        return List.of(
-                new Teacher(
-                        1 ,
-                        "Teacher 2",
-                        "Subject 2",
-                        "teacheremail@gmail.com",
-                        30,
-                        true
-                ),
-                new Teacher(
-                        1 ,
-                        "Teacher 2",
-                        "Subject 2",
-                        "teacheremail@gmail.com",
-                        30,
-                        true
-                ),
-                new Teacher(
-                        1 ,
-                        "Teacher 2",
-                        "Subject 2",
-                        "teacheremail@gmail.com",
-                        30,
-                        true
-                ),
-                new Teacher(
-                        1 ,
-                        "Teacher 2",
-                        "Subject 2",
-                        "teacheremail@gmail.com",
-                        30,
-                        true
-                ),
-                new Teacher(
-                        1 ,
-                        "Teacher 2",
-                        "Subject 2",
-                        "teacheremail@gmail.com",
-                        30,
-                        true
-                ),
-                new Teacher(
-                        1 ,
-                        "Teacher 2",
-                        "Subject 2",
-                        "teacheremail@gmail.com",
-                        30,
-                        true
-                )
-        );
+        return teacherRepository.findAll();
     }
 }

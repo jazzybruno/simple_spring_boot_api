@@ -1,14 +1,32 @@
 package com.example.springapp.teacher;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table
 public class Teacher {
-    private int id;
+    @Id
+    @SequenceGenerator(
+            name = "teacher_sequence",
+            sequenceName = "teacher_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "teacher_sequence"
+    )
+    private Long id;
     private String name;
     private String subject;
     private String email;
     private Integer age;
     private boolean isMarried;
 
-    public Teacher(int id, String name, String subject, String email, Integer age, boolean isMarried) {
+    public Teacher(){
+
+    }
+
+    public Teacher(Long id, String name, String subject, String email, Integer age, boolean isMarried) {
         this.id = id;
         this.name = name;
         this.subject = subject;
@@ -25,11 +43,11 @@ public class Teacher {
         this.isMarried = isMarried;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
