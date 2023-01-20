@@ -1,8 +1,11 @@
 package com.example.springapp.teacher;
 
+import org.springframework.stereotype.Component;
+
 import java.util.List;
 
-public class StudentService {
+@Component
+public class TeacherService {
     public List<Teacher> getTeachers(){
         return List.of(
                 new Teacher(
