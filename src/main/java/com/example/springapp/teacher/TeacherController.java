@@ -1,9 +1,7 @@
 package com.example.springapp.teacher;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,5 +17,14 @@ public class TeacherController {
     @GetMapping
     public List<Teacher> getTeacher(){
       return   teacherService.getTeachers();
+    }
+    @PostMapping
+    public void addTeacher(@RequestBody Teacher teacher) throws IllegalAccessException {
+        teacherService.insertTeacher(teacher);
+    }
+
+    @DeleteMapping("/{teacherId}")
+    public void deleteTeacher(@PathVariable("teacherId") Long id) throws IllegalAccessException {
+        teacherService.removeTeacher(id);
     }
 }

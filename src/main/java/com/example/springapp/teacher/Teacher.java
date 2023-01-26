@@ -1,6 +1,8 @@
 package com.example.springapp.teacher;
-
 import jakarta.persistence.*;
+
+import java.time.LocalDate;
+import java.time.Period;
 
 @Entity
 @Table
@@ -19,28 +21,30 @@ public class Teacher {
     private String name;
     private String subject;
     private String email;
-    private Integer age;
+    private LocalDate dob;
     private boolean isMarried;
+    @Transient
+    private Integer age;
 
     public Teacher(){
 
     }
 
-    public Teacher(Long id, String name, String subject, String email, Integer age, boolean isMarried) {
+    public Teacher(Long id, String name, String subject, String email, boolean isMarried , LocalDate dob) {
         this.id = id;
         this.name = name;
         this.subject = subject;
         this.email = email;
-        this.age = age;
         this.isMarried = isMarried;
+        this.dob = dob;
     }
 
-    public Teacher(String name, String subject, String email, Integer age, boolean isMarried) {
+    public Teacher(String name, String subject, String email,  boolean isMarried , LocalDate dob) {
         this.name = name;
         this.subject = subject;
         this.email = email;
-        this.age = age;
         this.isMarried = isMarried;
+        this.dob = dob;
     }
 
     public Long getId() {
@@ -76,7 +80,7 @@ public class Teacher {
     }
 
     public Integer getAge() {
-        return age;
+        return Period.between(this.dob , LocalDate.now()).getYears();
     }
 
     public void setAge(Integer age) {
@@ -89,5 +93,13 @@ public class Teacher {
 
     public void setMarried(boolean married) {
         isMarried = married;
+    }
+
+    public LocalDate getDob() {
+        return dob;
+    }
+
+    public void setDob(LocalDate dob) {
+        this.dob = dob;
     }
 }
