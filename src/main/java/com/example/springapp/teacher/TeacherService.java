@@ -32,10 +32,10 @@ public class TeacherService {
     }
 
     public void removeTeacher(Long id) throws IllegalAccessException {
-        if(!studentRepository.existsById(id)){
+        if(!teacherRepository.existsById(id)){
             throw new IllegalAccessException("The user with id: " + id + " does not exist");
         }
-        studentRepository.deleteById(id);
+        teacherRepository.deleteById(id);
     }
 }
 
