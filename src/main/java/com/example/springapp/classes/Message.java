@@ -12,10 +12,10 @@ public class Message {
     private Long message_id;
     private LocalDate TimeSent;
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "sender")
     private User sender;
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "receiver")
     private User receiver;
 
     public Message(){
