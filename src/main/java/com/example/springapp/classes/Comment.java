@@ -5,7 +5,7 @@ import java.time.LocalDate;
 public class Comment {
     private Long comment_id;
     private String content;
-    private LocalDate added_time;
+    private LocalDate addedTime;
     private User user;
     private Post post;
     private Comment comment;
@@ -16,7 +16,7 @@ public class Comment {
 
     public Comment(String content, LocalDate added_time, User user, Post post) {
         this.content = content;
-        this.added_time = added_time;
+        this.addedTime = added_time;
         this.user = user;
         this.post = post;
     }
@@ -38,11 +38,11 @@ public class Comment {
     }
 
     public LocalDate getAdded_time() {
-        return added_time;
+        return addedTime;
     }
 
-    public void setAdded_time(LocalDate added_time) {
-        this.added_time = added_time;
+    public void setAdded_time(LocalDate addedTime) {
+        this.addedTime = addedTime;
     }
 
     public User getUser() {
