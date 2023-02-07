@@ -1,5 +1,4 @@
 package com.example.springapp;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -18,7 +17,6 @@ public class SpringAppApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringAppApplication.class, args);
-
 	}
 
 	@Bean
@@ -31,8 +29,7 @@ public class SpringAppApplication {
 				.build();
 	}
 
-	public ApiInfo apiInfo(){
+	public ApiInfo apiInfo() {
 		return new ApiInfoBuilder().description("Some random APP").title("Simple app").version("1.0").build();
 	}
-
 }
