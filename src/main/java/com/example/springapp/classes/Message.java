@@ -1,11 +1,21 @@
 package com.example.springapp.classes;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 
+@Entity
+@Table
 public class Message {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long message_id;
     private LocalDate TimeSent;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
     private User sender;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
     private User receiver;
 
     public Message(){

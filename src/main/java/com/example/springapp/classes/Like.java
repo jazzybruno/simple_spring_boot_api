@@ -1,11 +1,28 @@
 package com.example.springapp.classes;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 import java.util.List;
 
+@Entity
+@Table
 public class Like {
+    @SequenceGenerator(
+            name = "like_sequence",
+            sequenceName = "like_sequence",
+            allocationSize = 1
+    )
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE ,
+                    generator = "like_sequence"
+    )
     private Long like_id;
+    @ManyToOne
+    @JoinColumn(name = "post_id")
     private Post post;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
     private LocalDate timeAdded;
 

@@ -1,8 +1,14 @@
 package com.example.springapp.classes;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 
+@Entity
+@Table
 public class Notification {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long not_id;
     private String content;
     private boolean isRead;

@@ -1,13 +1,32 @@
 package com.example.springapp.classes;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 
+@Entity
+@Table
 public class Comment {
+    @SequenceGenerator(
+            name = "comment_sequence",
+            sequenceName = "comment_sequence",
+            allocationSize = 1
+    )
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE ,
+                    generator = "comment_sequence"
+     )
     private Long comment_id;
     private String content;
     private LocalDate addedTime;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
+    @ManyToOne
+    @JoinColumn(name = "post_id")
     private Post post;
+    @OneToOne
+    @JoinColumn(name = "comment_id")
     private Comment comment;
 
     public Comment(){
