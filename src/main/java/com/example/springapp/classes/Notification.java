@@ -13,15 +13,27 @@ public class Notification {
     private String content;
     private boolean isRead;
     private LocalDate addedTime;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public Notification(){
 
     }
 
-    public Notification(String content, boolean isRead, LocalDate addedTime) {
+    public Notification(String content, boolean isRead, LocalDate addedTime , User user) {
         this.content = content;
         this.isRead = isRead;
         this.addedTime = addedTime;
+        this.user = user;
     }
 
     public Long getNot_id() {

@@ -6,16 +6,10 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Entity
-@Table
+@Table(name = "likeTable")
 public class Like {
-    @SequenceGenerator(
-            name = "like_sequence",
-            sequenceName = "like_sequence",
-            allocationSize = 1
-    )
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE ,
-                    generator = "like_sequence"
+    @GeneratedValue(strategy = GenerationType.AUTO
     )
     private Long like_id;
     @ManyToOne
