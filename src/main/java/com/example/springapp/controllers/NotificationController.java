@@ -36,8 +36,8 @@ public class NotificationController {
     public Optional<Notification> deleteNotification(@PathVariable Long not_id) throws Exception{
         return notificationService.deleteNotification(not_id);
     }
-
-    public Optional<Notification> updateNotification() throws Exception{
-
+    @PutMapping("/update/{not_id}")
+    public Notification updateNotification(@RequestBody Notification notification , @PathVariable Long not_id) throws Exception{
+        return notificationService.updateNotification( not_id , notification);
     }
 }

@@ -6,6 +6,7 @@ import com.example.springapp.classes.User;
 import com.example.springapp.repositories.LikeRepository;
 import com.example.springapp.repositories.NotificationRepository;
 import com.example.springapp.repositories.UserRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Component;
 
 import java.sql.SQLException;
@@ -68,5 +69,17 @@ public class NotificationService {
            }
         }
         throw new Exception("The user with the id:" + userId + " does not exist");
+    }
+
+    @Transactional
+    public Notification updateNotification(Long notId ,  Notification notification) throws Exception {
+        if(notificationRepository.existsById(notId)){
+            Optional<Notification> notification1 = notificationRepository.findById(notId);
+            Notification notification2 = notification1.get();
+            notification2.setContent(notification.getContent());
+            notification2.setRead(notification.isRead());
+            return notification2;
+        }
+        throw new Exception("The notification with id: " + notId + " is not present");
     }
 }
