@@ -5,6 +5,7 @@ import com.example.springapp.classes.User;
 import com.example.springapp.repositories.LikeRepository;
 import com.example.springapp.repositories.NotificationRepository;
 import com.example.springapp.repositories.UserRepository;
+import com.example.springapp.services.NotifcationService;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Component;
 
@@ -12,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Component
-public class NotificationServiceImpl {
+public class NotificationServiceImpl  implements NotifcationService {
     private final NotificationRepository notificationRepository;
     private final LikeRepository likeRepository;
     private final UserRepository userRepository;
