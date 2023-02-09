@@ -2,9 +2,8 @@ package com.example.springapp.controllers;
 
 import com.example.springapp.classes.User;
 import com.example.springapp.repositories.UserRepository;
-import com.example.springapp.services.UserService;
+import com.example.springapp.servicesImpl.UserServiceImpl;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,8 +14,8 @@ import java.util.Optional;
 public class UserController {
 
     private final UserRepository userRepository;
-    private final UserService userService;
-    public UserController( UserService userService , UserRepository userRepository){
+    private final UserServiceImpl userService;
+    public UserController(UserServiceImpl userService , UserRepository userRepository){
         this.userService = userService;
         this.userRepository = userRepository;
     }

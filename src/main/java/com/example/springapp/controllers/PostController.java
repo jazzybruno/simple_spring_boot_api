@@ -2,21 +2,20 @@ package com.example.springapp.controllers;
 
 import com.example.springapp.classes.Post;
 import com.example.springapp.repositories.PostRepository;
-import com.example.springapp.services.PostService;
+import com.example.springapp.servicesImpl.PostServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/post")
 public class PostController {
-    private final PostService postService;
+    private final PostServiceImpl postService;
     private final PostRepository postRepository;
     @Autowired
-    public PostController(PostService postService , PostRepository postRepository){
+    public PostController(PostServiceImpl postService , PostRepository postRepository){
         this.postService = postService;
         this.postRepository = postRepository;
     }

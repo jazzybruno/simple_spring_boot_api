@@ -2,7 +2,7 @@ package com.example.springapp.controllers;
 
 import com.example.springapp.classes.Like;
 import com.example.springapp.repositories.LikeRepository;
-import com.example.springapp.services.LikeService;
+import com.example.springapp.servicesImpl.LikeServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,9 +11,9 @@ import java.util.Optional;
 @RestController
 @RequestMapping("api/likes")
 public class LikeController {
-    private final LikeService likeService;
+    private final LikeServiceImpl likeService;
     private final LikeRepository likeRepository;
-    public LikeController(LikeService likeService , LikeRepository likeRepository){
+    public LikeController(LikeServiceImpl likeService , LikeRepository likeRepository){
         this.likeService = likeService;
         this.likeRepository = likeRepository;
     }

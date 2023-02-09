@@ -1,6 +1,5 @@
-package com.example.springapp.services;
+package com.example.springapp.servicesImpl;
 
-import com.example.springapp.classes.Like;
 import com.example.springapp.classes.Notification;
 import com.example.springapp.classes.User;
 import com.example.springapp.repositories.LikeRepository;
@@ -9,19 +8,18 @@ import com.example.springapp.repositories.UserRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Component;
 
-import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
 @Component
-public class NotificationService {
+public class NotificationServiceImpl {
     private final NotificationRepository notificationRepository;
     private final LikeRepository likeRepository;
     private final UserRepository userRepository;
 
-    public NotificationService(NotificationRepository notificationRepository,
-                               LikeRepository likeRepository,
-                               UserRepository userRepository){
+    public NotificationServiceImpl(NotificationRepository notificationRepository,
+                                   LikeRepository likeRepository,
+                                   UserRepository userRepository){
         this.notificationRepository = notificationRepository;
         this.likeRepository = likeRepository;
         this.userRepository = userRepository;

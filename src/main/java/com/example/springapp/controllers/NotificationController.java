@@ -2,7 +2,7 @@ package com.example.springapp.controllers;
 
 import com.example.springapp.classes.Notification;
 import com.example.springapp.repositories.NotificationRepository;
-import com.example.springapp.services.NotificationService;
+import com.example.springapp.servicesImpl.NotificationServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,9 +11,9 @@ import java.util.Optional;
 @RestController
 @RequestMapping("api/notification")
 public class NotificationController {
-    private final NotificationService notificationService;
+    private final NotificationServiceImpl notificationService;
     private final NotificationRepository notificationRepository;
-    public NotificationController(NotificationService notificationService , NotificationRepository notificationRepository){
+    public NotificationController(NotificationServiceImpl notificationService , NotificationRepository notificationRepository){
         this.notificationService = notificationService;
         this.notificationRepository = notificationRepository;
     }
