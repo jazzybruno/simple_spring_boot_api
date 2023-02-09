@@ -3,6 +3,7 @@ import com.example.springapp.classes.Post;
 import com.example.springapp.classes.User;
 import com.example.springapp.repositories.PostRepository;
 import com.example.springapp.repositories.UserRepository;
+import com.example.springapp.services.PostService;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Component;
 
@@ -10,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Component
-public class PostServiceImpl {
+public class PostServiceImpl implements PostService {
     private final PostRepository postRepository;
     private final UserRepository userRepository;
 
