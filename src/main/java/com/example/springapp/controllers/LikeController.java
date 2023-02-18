@@ -22,7 +22,6 @@ public class LikeController {
       return likeService.getAllLikes();
     }
 
-
     @GetMapping("like/{like_id}")
     public Optional<Like> getLikeById(@PathVariable Long like_id) throws Exception{
         return likeService.getLikeById(like_id);

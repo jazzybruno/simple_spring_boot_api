@@ -3,7 +3,7 @@ package com.example.springapp.servicesImpl;
 import com.example.springapp.classes.User;
 import com.example.springapp.repositories.UserRepository;
 import com.example.springapp.services.UserService;
-import jakarta.transaction.Transactional;
+import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import java.util.List;

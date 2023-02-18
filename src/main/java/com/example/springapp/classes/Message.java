@@ -1,6 +1,6 @@
 package com.example.springapp.classes;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 import java.time.LocalDate;
 

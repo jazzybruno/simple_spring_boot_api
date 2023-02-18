@@ -4,7 +4,7 @@ import com.example.springapp.classes.User;
 import com.example.springapp.repositories.PostRepository;
 import com.example.springapp.repositories.UserRepository;
 import com.example.springapp.services.PostService;
-import jakarta.transaction.Transactional;
+import javax.transaction.Transactional;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

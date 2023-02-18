@@ -6,7 +6,7 @@ import com.example.springapp.repositories.LikeRepository;
 import com.example.springapp.repositories.NotificationRepository;
 import com.example.springapp.repositories.UserRepository;
 import com.example.springapp.services.NotifcationService;
-import jakarta.transaction.Transactional;
+import javax.transaction.Transactional;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
